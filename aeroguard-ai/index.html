@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <title>AeroGuard AI — Aviation Risk Intelligence</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="AeroGuard home">
+        <span class="brand-mark">A<span>G</span></span>
+        <span><strong>AeroGuard</strong><small>AI RISK INTELLIGENCE</small></span>
+      </a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="nav">
+        <button class="nav-item active" data-view="overview"><span>◫</span> Overview</button>
+        <button class="nav-item" data-view="flights"><span>✈</span> Flight monitoring <b class="nav-count">3</b></button>
+        <button class="nav-item" data-view="maintenance"><span>⚙</span> Maintenance</button>
+        <button class="nav-item" data-view="weather"><span>☁</span> Weather risks</button>
+        <button class="nav-item" data-view="reports"><span>▤</span> Reports</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="demo-note"><span class="pulse"></span><div><strong>DEMO ENVIRONMENT</strong><small>Using illustrative sample data</small></div></div>
+        <div class="profile"><div class="avatar">DA</div><div><strong>Demo Analyst</strong><small>Safety Operations</small></div><span class="dots">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="crumb"><span>Workspace</span><span class="slash">/</span><strong id="pageCrumb">Overview</strong></div>
+        <div class="top-actions"><span class="live-label"><i></i> DEMO DATA</span><button class="icon-btn" id="refreshBtn" title="Refresh demo data">↻</button><button class="user-btn"><span class="avatar small">DA</span> Analyst <span>⌄</span></button></div>
+      </header>
+
+      <section class="page-head">
+        <div><p class="eyebrow">THURSDAY, OCTOBER 15, 2026 <span class="eyebrow-line"></span> OPERATIONS CENTER</p><h1 id="pageTitle">Good afternoon, Analyst <span class="wave">✦</span></h1><p class="subtitle" id="pageSubtitle">A unified view of flight, weather, and maintenance risk signals.</p></div>
+        <button class="primary-btn" id="exportBtn"><span>↓</span> Export safety report</button>
+      </section>
+
+      <section id="overviewView" class="view">
+        <div class="stat-grid">
+          <article class="stat-card"><div class="stat-top"><span>Flights monitored</span><span class="stat-icon blue">✈</span></div><div class="stat-value">24 <span class="stat-unit">today</span></div><div class="stat-foot"><span class="positive">↗ 8.3%</span> vs. previous demo period</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Elevated risk signals</span><span class="stat-icon amber">!</span></div><div class="stat-value" id="riskCount">03</div><div class="stat-foot"><span class="warning-text">Requires review</span> before dispatch</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Aircraft health</span><span class="stat-icon green">⌁</span></div><div class="stat-value">96.8<span class="stat-unit">%</span></div><div class="progress"><span style="width:96.8%"></span></div><div class="stat-foot">Fleet health indicator <span class="muted">· illustrative</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Open maintenance items</span><span class="stat-icon purple">⚙</span></div><div class="stat-value">07</div><div class="stat-foot"><span class="warning-text">2 high priority</span> scheduled inspections</div></article>
+        </div>
+
+        <div class="content-grid">
+          <article class="panel risk-panel">
+            <div class="panel-head"><div><h2>Priority risk signals</h2><p>Ranked for human review · not an operational clearance</p></div><button class="text-btn" data-goto="flights">View all ↗</button></div>
+            <div class="risk-list" id="riskList"></div>
+          </article>
+          <article class="panel readiness-panel">
+            <div class="panel-head"><div><h2>Fleet readiness</h2><p>Sample fleet status</p></div><span class="mini-tag">DEMO</span></div>
+            <div class="readiness-score"><div class="score-ring"><div><strong>96.8</strong><small>/ 100</small></div></div><div><strong>Operational overview</strong><p>Most monitored aircraft have no high-priority demo alerts.</p><span class="status-pill good">● Stable indicators</span></div></div>
+            <div class="mini-bars">
+              <div><span>Flight plan checks</span><strong>94%</strong><i><b style="width:94%"></b></i></div>
+              <div><span>Maintenance status</span><strong>91%</strong><i><b style="width:91%"></b></i></div>
+              <div><span>Weather review</span><strong>87%</strong><i><b style="width:87%"></b></i></div>
+            </div>
+            <p class="fineprint">Scores are synthetic examples for demonstration and are not derived from live aircraft data.</p>
+          </article>
+        </div>
+
+        <article class="panel flights-panel">
+          <div class="panel-head"><div><h2>Monitored flights</h2><p>Illustrative flight records with explainable risk factors</p></div><div class="table-actions"><input id="flightSearch" type="search" placeholder="Search flight or route…" aria-label="Search flights"><button class="filter-btn" id="riskFilter">All risks⌄</button></div></div>
+          <div class="table-wrap"><table><thead><tr><th>FLIGHT / ROUTE</th><th>DEPARTURE</th><th>WEATHER</th><th>TECHNICAL</th><th>RISK SCORE</th><th>STATUS</th></tr></thead><tbody id="flightRows"></tbody></table></div>
+          <div class="table-footer"><span id="tableCount">Showing 5 sample flights</span><span>Last demo update: <strong id="updatedAt">just now</strong></span></div>
+        </article>
+      </section>
+
+      <section id="flightsView" class="view hidden">
+        <article class="panel"><div class="panel-head"><div><h2>Flight monitoring</h2><p>Review simulated risk factors for each sample flight.</p></div><input id="flightSearch2" type="search" placeholder="Search flight or route…"></div><div class="table-wrap"><table><thead><tr><th>FLIGHT / ROUTE</th><th>DEPARTURE</th><th>WEATHER</th><th>TECHNICAL</th><th>RISK SCORE</th><th>STATUS</th></tr></thead><tbody id="flightRows2"></tbody></table></div><p class="fineprint">AeroGuard AI is a decision-support prototype. It does not provide dispatch authorization or replace certified aviation procedures.</p></article>
+      </section>
+
+      <section id="maintenanceView" class="view hidden">
+        <div class="section-intro"><div><h2>Maintenance watchlist</h2><p>Example maintenance items prioritized by urgency and operational relevance.</p></div><span class="mini-tag">SAMPLE RECORDS</span></div>
+        <div class="maintenance-grid" id="maintenanceGrid"></div>
+      </section>
+
+      <section id="weatherView" class="view hidden">
+        <div class="section-intro"><div><h2>Weather risk overview</h2><p>Illustrative weather inputs to demonstrate risk explainability. No live weather feed is connected.</p></div><span class="mini-tag">SIMULATED</span></div>
+        <div class="weather-grid" id="weatherGrid"></div>
+        <article class="panel methodology"><h2>How weather risk is explained</h2><p>The prototype displays factors such as crosswind, visibility, precipitation, and convective activity as review prompts. Actual limits depend on aircraft type, operator procedures, airport, runway, and current approved data.</p></article>
+      </section>
+
+      <section id="reportsView" class="view hidden">
+        <div class="section-intro"><div><h2>Safety reports</h2><p>Generate a downloadable summary of the current illustrative dataset.</p></div></div>
+        <article class="panel report-card"><div class="report-icon">▤</div><div><h2>Daily risk summary</h2><p>Includes flight risk scores, explainable factors, maintenance watchlist, and prototype limitations.</p><div class="report-meta"><span>CSV + JSON</span><span>•</span><span>Sample data only</span></div></div><button class="primary-btn" id="exportBtn2">↓ Download report</button></article>
+        <article class="panel methodology"><h2>About this prototype</h2><p>AeroGuard AI demonstrates how an aviation safety team could bring flight, weather, and maintenance indicators into one review interface. All records are fictional. No real-world operational decisions should be based on this demo.</p></article>
+      </section>
+
+      <footer class="footer"><span>© 2026 AeroGuard AI</span><span>Prototype for hackathon demonstration · Not for operational use</span><span>Built for explainable safety review <b>✦</b></span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

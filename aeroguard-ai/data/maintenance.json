@@ -1,0 +1,26 @@
+[
+  {
+    "id": "MX-1042",
+    "title": "Hydraulic system inspection",
+    "priority": "High",
+    "synthetic": true
+  },
+  {
+    "id": "MX-1048",
+    "title": "Engine vibration trend review",
+    "priority": "High",
+    "synthetic": true
+  },
+  {
+    "id": "MX-1051",
+    "title": "Landing light replacement",
+    "priority": "Medium",
+    "synthetic": true
+  },
+  {
+    "id": "MX-1059",
+    "title": "Cabin pressure sensor check",
+    "priority": "Medium",
+    "synthetic": true
+  }
+]

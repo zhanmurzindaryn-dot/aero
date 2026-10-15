@@ -1,0 +1,29 @@
+[
+  {
+    "airport": "Almaty",
+    "code": "ALA",
+    "wind_kmh": 18,
+    "visibility_km": 10,
+    "precipitation": "Low",
+    "risk_signal": "Low",
+    "synthetic": true
+  },
+  {
+    "airport": "Astana",
+    "code": "NQZ",
+    "wind_kmh": 31,
+    "visibility_km": 7,
+    "precipitation": "Low",
+    "risk_signal": "Elevated",
+    "synthetic": true
+  },
+  {
+    "airport": "Shymkent",
+    "code": "CIT",
+    "wind_kmh": 24,
+    "visibility_km": 5,
+    "precipitation": "Moderate",
+    "risk_signal": "High",
+    "synthetic": true
+  }
+]

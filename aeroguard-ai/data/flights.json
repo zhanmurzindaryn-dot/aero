@@ -1,0 +1,52 @@
+[
+  {
+    "id": "AG 204",
+    "route": "Almaty → Astana",
+    "departure": "14:35",
+    "weather": "Crosswind elevated",
+    "technical": "No open defect",
+    "risk_score": 68,
+    "status": "Review",
+    "synthetic": true
+  },
+  {
+    "id": "AG 118",
+    "route": "Astana → Shymkent",
+    "departure": "15:10",
+    "weather": "Visibility reduced",
+    "technical": "Inspection due",
+    "risk_score": 82,
+    "status": "Priority review",
+    "synthetic": true
+  },
+  {
+    "id": "AG 331",
+    "route": "Almaty → Aktau",
+    "departure": "16:00",
+    "weather": "Stable conditions",
+    "technical": "No open defect",
+    "risk_score": 18,
+    "status": "Low signal",
+    "synthetic": true
+  },
+  {
+    "id": "AG 507",
+    "route": "Shymkent → Astana",
+    "departure": "16:25",
+    "weather": "Thunderstorm watch",
+    "technical": "No open defect",
+    "risk_score": 74,
+    "status": "Priority review",
+    "synthetic": true
+  },
+  {
+    "id": "AG 612",
+    "route": "Astana → Almaty",
+    "departure": "17:05",
+    "weather": "Light precipitation",
+    "technical": "Routine check due",
+    "risk_score": 49,
+    "status": "Review",
+    "synthetic": true
+  }
+]
